@@ -2748,7 +2748,7 @@ a:hover, a:active {
 }
 .dsn-style-classic.dsn-under-img .dsn-posts .post-content {
   padding: 0 30px 30px 30px;
-  margin-top: -45px;
+  margin-top: 0px;
 }
 .dsn-style-list .dsn-posts .box-content {
   border-style: var(--heading-color);
