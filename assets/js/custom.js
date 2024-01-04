@@ -1494,3 +1494,40 @@ function sidebarOptions() {
   document.body.classList.toggle('dsn-show-sidebar');
 }
 //# sourceMappingURL=custom.js.map
+
+// 表單提交代碼
+$(document).ready(function(){
+  $("#contact-form").submit(function(e){
+      e.preventDefault(); // 阻止表單的默認提交行為
+
+      // 獲取表單數據
+      var formData = $(this).serialize();
+
+      // 參考表單元素，用於後續的成功處理
+      var form = $(this);
+
+      // 發送表單數據到 Webhook URL
+      $.ajax({
+          type: "POST",
+          url: "https://hook.us1.make.com/4bjg4lwj8prsotnkxp6i2qaufequh5ke",
+          data: formData,
+          success: function(response){
+              // 在這裡處理成功的回應，例如顯示一個成功消息
+              console.log("Webhook 請求成功");
+
+              // 在表單下方顯示成功消息
+              form.find('.form-alert').html('<div class="alert alert-success" role="alert">表單提交成功！</div>');
+
+              // 清空表單
+              form[0].reset();
+          },
+          error: function(error){
+              // 在這裡處理錯誤，例如顯示錯誤消息
+              console.error("Webhook 請求失敗", error);
+
+              // 在表單下方顯示錯誤消息
+              form.find('.form-alert').html('<div class="alert alert-danger" role="alert">表單提交失敗！請重試。</div>');
+          }
+      });
+  });
+});

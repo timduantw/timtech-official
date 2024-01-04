@@ -17,7 +17,10 @@
       - Menus
 	  - Next & Previous
     8. Content
-      - pages
+      - Pages
+      - Slider
+      - Portfolio
+      - Color Chip
       - Comments
       - Archives
       - Footer
@@ -635,12 +638,22 @@ body:not(.dsn-cursor-effect) #dsn_cursor, body:not(.dsn-cursor-effect) #dsn_curs
     justify-self: inherit;
   }
 }
+/*--------------------------------------------------------------
+## Forms
+--------------------------------------------------------------*/
+
 input::placeholder,
 textarea::placeholder,
 .form-control::placeholder,
 .form-box input::placeholder,
 .form-box textarea::placeholder {
-  color: var(--font-color);
+  color: #666;
+}
+.alert-success{
+  color: green;
+}
+.alert-danger{
+  color: red;
 }
 
 input[type=search]::-webkit-search-decoration {
@@ -2168,7 +2181,7 @@ a:hover, a:active {
 
 -------------------------------------------------------- */
 /*--------------------------------------------------------------
-## pages
+## Pages
 --------------------------------------------------------------*/
 /* -------------------------------------------------------
                    09 - Slider
