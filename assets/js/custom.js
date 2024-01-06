@@ -1495,7 +1495,7 @@ function sidebarOptions() {
 }
 //# sourceMappingURL=custom.js.map
 
-// 表單提交代碼
+// 表單提交: 使用ajax提交到webhook
 $(document).ready(function(){
   $("#contact-form").submit(function(e){
       e.preventDefault(); // 阻止表單的默認提交行為
